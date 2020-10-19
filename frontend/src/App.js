@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+import data from './data';
 import './App.css';
 
 function App() {
@@ -42,54 +42,22 @@ function App() {
       <main className="main">
         <div className="content">
           <ul className="products">
-            <li className="product">
-              <img className="product-image" src='./images/p1.jpg' alt="product 1"></img>
-              <div className="product-name">
-                <a href="product.html">Macbook Pro 2020 Retina Display</a>
-              </div>
-              <div className="product-brand">Apple</div>
-              <div className='product-price'>$999</div>
-              <div className="product-rating">4.75 (10 reviews)</div>
-            </li>
-            <li className="product">
-              <img className="product-image" src='./images/p1.jpg' alt="product 1"></img>
-              <div className="product-name">
-                <a href="product.html">Macbook Pro 2020 Retina Display</a>
-              </div>
-              <div className="product-brand">Apple</div>
-              <div className='product-price'>$999</div>
-              <div className="product-rating">4.75 (10 reviews)</div>
-            </li>
-            <li className="product">
-              <img className="product-image" src='./images/p1.jpg' alt="product 1"></img>
-              <div className="product-name">
-                <a href="product.html">Macbook Pro 2020 Retina Display</a>
-              </div>
-              <div className="product-brand">Apple</div>
-              <div className='product-price'>$999</div>
-              <div className="product-rating">4.75 (10 reviews)</div>
-            </li>
-            <li className="product">
-              <img className="product-image" src='./images/p1.jpg' alt="product 1"></img>
-              <div className="product-name">
-                <a href="product.html">Macbook Pro 2020 Retina Display</a>
-              </div>
-              <div className="product-brand">Apple</div>
-              <div className='product-price'>$999</div>
-              <div className="product-rating">4.75 (10 reviews)</div>
-
-            </li>
-            <li className="product">
-              <img className="product-image" src='./images/p1.jpg' alt="product 1"></img>
-              <div className="product-name">
-                <a href="product.html">Macbook Pro 2020 Retina Display</a>
-              </div>
-              <div className="product-brand">Apple</div>
-              <div className='product-price'>$999</div>
-              <div className="product-rating">4.75 (10 reviews)</div>
-
-            </li>
-
+            {/* changed from statically showing the products to dynamically showing it */}
+            {
+              // products will be displayed dynamically based on the data that's retrieved from data.products
+              data.products.map(product =>
+                <li>
+                  <div className="product">
+                    <img className="product-image" src={product.image} alt="product 1"></img>
+                    <div className="product-name">
+              <a href="product.html">{product.name}</a>
+                    </div>
+              <div className="product-brand">{product.brand}</div>
+              <div className='product-price'>{product.price}</div>
+              <div className="product-rating">{product.rating} Stars ({product.numReviews})</div>
+                  </div>
+                </li>)
+            }
           </ul>
         </div>
       </main>
