@@ -143,6 +143,7 @@ a:hover{
 .sidebar {
   position: fixed;
   /* position fixed to keep the sidebar on top of the screen */
+  transition: all 0.5s;
   transform: translateX(-30rem);
   width: 30rem;
   /* transform and width ensures that the sidebar is left outside of the screen */
