@@ -3,11 +3,19 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const openMenu = () => {
+    document.querySelector('.sidebar').classList.add('open');
+  }
+
+  const closeMenu = () => {
+    document.querySelector('.sidebar').classList.remove('open');
+  }
   return (
     <div className="grid-container">
       <header className="header">
         <div className="brand">
-          <button onclick="openMenu()">
+          {/* in order to give the sidebar an open and close functionality we create individual functions for them  */}
+          <button onClick={openMenu}>
             &#9776;
         </button>
           <a href="index.html">Maurya's Store</a>
@@ -19,7 +27,7 @@ function App() {
       </header>
       <aside className="sidebar">
         <h3>Categories</h3>
-        <button className="sidebar-closeButton" onclick="closeMenu()">
+        <button className="sidebar-closeButton" onClick={closeMenu}>
           X
         </button>
         <ul>
@@ -35,7 +43,7 @@ function App() {
         <div className="content">
           <ul className="products">
             <li className="product">
-              <img className="product-image" src='./images/p1.jpg' alt="product 1 image"></img>
+              <img className="product-image" src='./images/p1.jpg' alt="product 1"></img>
               <div className="product-name">
                 <a href="product.html">Macbook Pro 2020 Retina Display</a>
               </div>
@@ -44,7 +52,7 @@ function App() {
               <div className="product-rating">4.75 (10 reviews)</div>
             </li>
             <li className="product">
-              <img className="product-image" src='./images/p1.jpg' alt="product 1 image"></img>
+              <img className="product-image" src='./images/p1.jpg' alt="product 1"></img>
               <div className="product-name">
                 <a href="product.html">Macbook Pro 2020 Retina Display</a>
               </div>
@@ -53,7 +61,7 @@ function App() {
               <div className="product-rating">4.75 (10 reviews)</div>
             </li>
             <li className="product">
-              <img className="product-image" src='./images/p1.jpg' alt="product 1 image"></img>
+              <img className="product-image" src='./images/p1.jpg' alt="product 1"></img>
               <div className="product-name">
                 <a href="product.html">Macbook Pro 2020 Retina Display</a>
               </div>
@@ -62,7 +70,7 @@ function App() {
               <div className="product-rating">4.75 (10 reviews)</div>
             </li>
             <li className="product">
-              <img className="product-image" src='./images/p1.jpg' alt="product 1 image"></img>
+              <img className="product-image" src='./images/p1.jpg' alt="product 1"></img>
               <div className="product-name">
                 <a href="product.html">Macbook Pro 2020 Retina Display</a>
               </div>
@@ -72,7 +80,7 @@ function App() {
 
             </li>
             <li className="product">
-              <img className="product-image" src='./images/p1.jpg' alt="product 1 image"></img>
+              <img className="product-image" src='./images/p1.jpg' alt="product 1"></img>
               <div className="product-name">
                 <a href="product.html">Macbook Pro 2020 Retina Display</a>
               </div>
