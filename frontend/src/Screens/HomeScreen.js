@@ -1,14 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import data from '../data';
+import axios from 'axios';
 // create a function with some props
 function HomeScreen(props) {
+    // define a hook
+    const [products, setProduct] = useState([]);
+
+    useEffect(() => {
+        // async function that fetches data
+        const fetchData = async() => {
+            const { data } = await axios.get('/api/products');
+            setProduct(data)
+        }
+        // calling the data fetchData function to implement it
+        fetchData();
+        return () => {
+            // 
+        };
+    }, [])
     return <ul className="products">
         {/* changed from statically showing the products to dynamically showing it */}
         {
             // products will be displayed dynamically based on the data that's retrieved from data.products
-            data.products.map(product =>
-                <li>
+            products.map(product =>
+                <li key={product._id}>
                     <div className="product">
                     <Link to={'/products/' + product._id}>
                         <img className="product-image" src={product.image} alt="product 1"></img>
