@@ -1,0 +1,30 @@
+{
+  "name": "ecomm-store",
+  "version": "1.0.0",
+  "description": "A full stack ecommerce store created using the MERN stack. Can filter the products with keywords will have the option to login as an admin or the user as well. Able to edit the products and their description (admin). Can see the list of orders that the users have placed for you.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --watch backend --exec babel-node backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maurya512/ecomm-store.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maurya512/ecomm-store/issues"
+  },
+  "homepage": "https://github.com/maurya512/ecomm-store#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/node": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "nodemon": "^2.0.6"
+  }
+}
