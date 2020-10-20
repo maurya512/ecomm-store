@@ -11,6 +11,9 @@ body {
   /* vh is viewport height */
   margin: 0;
 }
+#root{
+  height: 100%;
+}
 .grid-container {
   display: grid;
   grid-template-areas: 
