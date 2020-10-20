@@ -1,6 +1,9 @@
 import React from 'react';
 import data from './data';
+import { BrowserRouter, Link, Route } from 'react-router-dom';
 import './App.css';
+import HomeScreen from './Screens/HomeScreen';
+import ProductScreen from './Screens/ProductScreen';
 
 function App() {
   const openMenu = () => {
@@ -11,6 +14,7 @@ function App() {
     document.querySelector('.sidebar').classList.remove('open');
   }
   return (
+    <BrowserRouter>
     <div className="grid-container">
       <header className="header">
         <div className="brand">
@@ -18,7 +22,7 @@ function App() {
           <button onClick={openMenu}>
             &#9776;
         </button>
-          <a href="index.html">Maurya's Store</a>
+        <Link to ='/'>Maurya's Store</Link>
         </div>
         <div className="header-links">
           <a href="cart.html">Cart</a>
@@ -41,30 +45,17 @@ function App() {
       </aside>
       <main className="main">
         <div className="content">
-          <ul className="products">
-            {/* changed from statically showing the products to dynamically showing it */}
-            {
-              // products will be displayed dynamically based on the data that's retrieved from data.products
-              data.products.map(product =>
-                <li>
-                  <div className="product">
-                    <img className="product-image" src={product.image} alt="product 1"></img>
-                    <div className="product-name">
-              <a href="product.html">{product.name}</a>
-                    </div>
-              <div className="product-brand">{product.brand}</div>
-              <div className='product-price'>{product.price}</div>
-              <div className="product-rating">{product.rating} Stars ({product.numReviews})</div>
-                  </div>
-                </li>)
-            }
-          </ul>
+          {/* route for each individual product */}
+          <Route path='/product/:id' component={ProductScreen} />
+          {/* route for the home page */}
+          <Route path="/" exact={true} component={HomeScreen} />
         </div>
       </main>
       <footer className="footer">
         All rights reserved.
     </footer>
     </div>
+    </BrowserRouter>
   );
 }
 
