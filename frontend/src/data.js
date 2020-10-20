@@ -5,7 +5,7 @@ export default {
         // each object is product data
         name: 'Macbook Air Retina Display 2020',
         category: 'Laptops',
-        image: './images/p1.jpg',
+        image: '../images/p1.jpg',
         price: 999,
         brand: 'Apple',
         rating: 4.75,
@@ -14,7 +14,7 @@ export default {
         {
         name: 'Macbook Pro Retina Display 2020',
         category: 'Laptops',
-        image: './images/p2.jpg',
+        image: '../images/p2.jpg',
         price: 1299,
         brand: 'Apple',
         rating: 4.65,
@@ -23,7 +23,7 @@ export default {
     {
         name: 'iMac Pro Retina Display 2020',
         category: 'Laptops',
-        image: './images/p3.jpg',
+        image: '../images/p3.jpg',
         price: 1399,
         brand: 'Apple',
         rating: 4.5,
