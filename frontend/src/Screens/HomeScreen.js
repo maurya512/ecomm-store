@@ -1,24 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import { listProduct } from '../actions/productActions';
 // create a function with some props
 function HomeScreen(props) {
     // define a hook
-    const [products, setProduct] = useState([]);
+    // const [products, setProduct] = useState([]);
+    const productList = useSelector(state => state.productList);
+    const {products,loading, error} = productList;
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        // async function that fetches data
-        const fetchData = async() => {
-            const { data } = await axios.get('/api/products');
-            setProduct(data)
-        }
-        // calling the data fetchData function to implement it
-        fetchData();
+        dispatch(listProduct());
         return () => {
             // 
         };
     }, [])
-    return <ul className="products">
+    return loading ? <div>Loading....</div>:
+    error ? <div>{error}</div>:
+    <ul className="products">
         {/* changed from statically showing the products to dynamically showing it */}
         {
             // products will be displayed dynamically based on the data that's retrieved from data.products
